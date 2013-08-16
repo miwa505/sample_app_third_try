@@ -1,5 +1,7 @@
 SampleApp::Application.routes.draw do
-  get "users/new"
+  # Listing 7.3
+  # get "users/new"
+  resources :users
   # Listing 5.26
   root 'static_pages#home'
   # Listing 5.35
