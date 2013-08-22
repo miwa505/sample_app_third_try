@@ -29,7 +29,7 @@ development:
   # timeout: 5000
 
 # Update with PosgresSQL as per Exercise 3.5.3	
-test:
+test: &test
   adapter: postgresql
   database: sample_app-test
   host: localhost
@@ -46,3 +46,5 @@ production:
   adapter: postgresql
   database: sample_app-production
   host: localhost
+cucumber:
+  <<: *test

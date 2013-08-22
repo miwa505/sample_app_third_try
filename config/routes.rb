@@ -2,10 +2,15 @@ SampleApp::Application.routes.draw do
   # Listing 7.3
   # get "users/new"
   resources :users
+  # Listing 8.2
+  resources :sessions, only: [:new, :create, :destroy]
   # Listing 5.26
   root 'static_pages#home'
   # Listing 5.35
   match '/signup',  to: 'users#new',            via: 'get'
+  # Listing 8.2
+  match '/signin',  to: 'sessions#new',         via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
   # Listing 5.24
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
